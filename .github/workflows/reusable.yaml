@@ -1,0 +1,12 @@
+on: [workflow_call]
+
+jobs:
+  test:
+    environment:
+      name: test
+    runs-on: ubuntu-latest
+    env:
+      FOOBAR: ${{ secrets.FOOBAR }}
+    steps:
+      - run: |
+          printf 'Value of FOOBAR: "%s"\n' "$FOOBAR"
