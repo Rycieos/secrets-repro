@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FOOBAR: ${{ secrets.FOOBAR }}
+      BAZ: ${{ vars.BAZ }}
     steps:
       - run: |
           printf 'Value of FOOBAR: "%s"\n' "$FOOBAR"
+          printf 'Value of BAZ: "%s"\n' "$BAZ"
 
