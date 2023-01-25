@@ -5,3 +5,4 @@ jobs:
     uses: ./.github/workflows/reusable.yaml
     with:
       environment: test
+    secrets: inherit
