@@ -3,3 +3,5 @@ on: [push]
 jobs:
   test:
     uses: ./.github/workflows/reusable.yaml
+    with:
+      environment: test

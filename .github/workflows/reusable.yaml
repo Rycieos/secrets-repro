@@ -1,12 +1,18 @@
-on: [workflow_call]
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
 
 jobs:
   test:
     environment:
-      name: test
+      name: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     env:
       FOOBAR: ${{ secrets.FOOBAR }}
     steps:
       - run: |
           printf 'Value of FOOBAR: "%s"\n' "$FOOBAR"
+
